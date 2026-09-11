@@ -1,0 +1,66 @@
+body{
+  margin: 0;
+  height: 100%;
+
+}
+
+.main-page{
+border-style: solid;
+background-color: #f2f2f2;
+border-color: blue;
+
+display: flex;
+min-height: 100dvh;/*
+Check read me file for explanation*/
+}
+
+.main-page header{
+  border-style: solid;
+  border-color: red;
+
+  display: flex;
+  flex-direction: column;
+  width: 10%;
+
+  justify-content: center;
+  gap: 3.5rem;
+  
+}
+
+.main-page header div{
+  display: flex;
+  align-items: center;
+
+
+  border-style: solid;
+  border-color: yellow;
+}
+
+.main-page header div a{
+  background-color: darkblue;
+  color: white;
+
+  font-family: roboto, sans-serif;
+  padding-left: 7px;
+   border-radius: 5px;
+ 
+}
+
+header button{
+  width: 40%;
+  font-size: clamp(0.2rem, 2vw, 2rem); /* Check read me file for explanation, I was too lazy to add it*/
+
+  border-radius: 50%;
+   margin-right: -7px;
+
+   z-index: 1;
+}
+
+.main-page .intro{
+  border-style: solid;
+  border-color: orange;
+
+}
+
+
+
