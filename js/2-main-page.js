@@ -1,229 +1,197 @@
+/////////////////////////////////// Switching Pages and Page transitions   ///////////////////////////////////////////
 
-  /////////////////////////////////// Switching Pages   ///////////////////////////////////////////
+const classOfTemplateIds = {
+  home: "home-section",
+  about: "about-section",
+  projects: "projects-section",
+  skills: "skills-section",
+  CV: "CV-section",
+  contact: "contact-section",
+};
 
-  const classOfTemplateIds = {home:'home-section', 
-    about:'about-section', 
-    projects:'projects-section', 
-    skills:'skills-section',
-    CV: 'CV-section',
-    contact: 'contact-section' }
+const arrayOfIds = [
+  "#home-section",
+  "#about-section",
+  "#projects-section",
+  "#skills-section",
+  "#CV-section",
+  "#contact-section",
+];
 
-     const arrayOfIds = ['#home-section', '#about-section', 
-    '#projects-section', 
-    '#skills-section',
-    '#CV-section',
-    '#contact-section' ]
+const arrayOfBtnIds = ["home", "about", "projects", "skills", "CV", "contact"];
 
-    const arrayOfBtnIds = ['home',
-       'about',
-        'projects',
-         'skills',
-          'CV',
-           'contact']
+const arrayOfTemplates = [];
 
-    const arrayOfTemplates = [];
+let currentPage = localStorage.getItem("currentPage") || arrayOfTemplates[0];
+//this makes the current page on refresh to either be the most recent page or
 
-    for(let i = 0; i<arrayOfIds.length; i++){
+//localStorage.clear();
 
-            arrayOfTemplates.push(document.querySelector(arrayOfIds[i]).innerHTML);
 
+console.log(localStorage.getItem('currentPage'));
+
+let currentPageId = '';//page being switched to
+
+let leavingPageId = JSON.parse(localStorage.getItem('leavingPageId')) || '';//page we're leaving to current page
+
+for (let i = 0; i < arrayOfIds.length; i++) {
+  arrayOfTemplates.push(document.querySelector(arrayOfIds[i]).innerHTML);
+
+  if(arrayOfIds[i] === leavingPageId){
+    localStorage.setItem('currentPage', JSON.stringify(document.querySelector(arrayOfIds[i]).innerHTML))
+  }//to make sure the currentPage is updated each time its html element is updated
+}
+
+localStorage.setItem("arrayOfTemplates", JSON.stringify(arrayOfTemplates));
+
+let arrayClone = [];
+
+function returnIndex(array, button) {
+  newbutton = "#" + button;
+
+  console.log("return index: " + button);
+
+  for (let i = 0; i < array.length; i++) {
+    console.log(newbutton, array[i]);
+
+    if (array[i] === newbutton) {
+      return i;
     }
-
-    localStorage.setItem('arrayOfTemplates', JSON.stringify(arrayOfTemplates));
-
-    let arrayClone = [];
-
-  function returnIndex(array, button){
-
-    newbutton = '#' + button;
-
-    console.log('return index: ' + button);
-
-    for(let i = 0; i < array.length; i++){
-
-      console.log(newbutton, array[i])
-
-      if(array[i] === newbutton){
-        
-        return i;
-      }     
-    }
-
-    throw console.error('No id matches');
-    
   }
 
-   // console.log(document.querySelector('#home').innerHTML)
+  throw console.error("No id matches");
+}
+//returns the index of the button who's section is being transitioned to
 
-    function switchPage(button){
-      document.querySelector('#' + button)
-      .addEventListener('click', function(e){
+// console.log(document.querySelector('#home').innerHTML)
 
-        console.log(e.currentTarget.id);
+///for page switching
 
-        let index = returnIndex(arrayOfIds, e.currentTarget.id + '-section');
-        //tagrget.id returns the button's id which is either 'home' or 'about' or.....
-        //so we add '-section' so we can compare against the template ids
+function pageSwitchingLogic(e){
 
-        
+    console.log(e.currentTarget.id);
 
-        document.querySelector('#home-section').innerHTML = '';
+    //remove slidein effect that might still be in classList
+      document.querySelector(".intro").classList.remove("slidein");
 
-        for(let i = 0; i < arrayOfTemplates.length; i++){
-
-          arrayClone[i] = arrayOfTemplates[i];
-
-        }
-
-         console.log(arrayClone);
-
-        let currentPage = arrayClone[index];
-
-        console.log(currentPage);
-
-        transitionPage(currentPage);
-
-      })
+    let index = returnIndex(arrayOfIds, e.currentTarget.id + "-section");
+    //tagrget.id returns the button's id which is either 'home' or 'about' or.....
+    //so we add '-section' so we can compare against the template ids
+    for (let i = 0; i < arrayOfTemplates.length; i++) {
+      arrayClone[i] = arrayOfTemplates[i];
     }
 
-    console.log(arrayOfTemplates);
+    console.log(arrayClone);
 
-    arrayOfBtnIds.forEach(function(arrayItem){
-      switchPage(arrayItem);
-    })
+    //if the page is still transitioning then it returns true and returns to the leaving page. This stops the current page id from being set everytime
 
+    if(istransitioning){ 
+      return;
+    }
 
-    function transitionPage(currentPage){
+    currentPage = arrayClone[index];
 
-     if(!document.querySelector('.intro').classList.contains('fade-out')){
-        document.querySelector('.intro').classList.add('fade-out');
+    localStorage.setItem('currentPage', JSON.stringify(currentPage));
+    //stores the data of the current page in json, it's just the html tags stored in it, so it can later be used to track the most recent section after refresh 
+
+    currentPageId = arrayOfIds[index];
+
+    //keeps the page same if the destination is same
+     if(leavingPageId !== currentPageId){
+
+      console.log('failed if')
+
+    leavingPageId = currentPageId;//the page that we switched to becomes the page we'll be leaving
+
+    localStorage.setItem('leavingPageId', JSON.stringify(leavingPageId));
+    //stores the page we're going to be leaving or current page's id so we can keep track of which page we're on when we need to switch pages
+
+    console.log(currentPage);
+
+    transitionPage(currentPage);
+
+     } else{
+
+     currentPageId = leavingPageId;
+
      }
 
-      
+}
 
-     setTimeout(function(){
 
-      document.querySelector('#home-section').innerHTML = currentPage;
+function switchPage(button) {
+  document.querySelector("#" + button)
+  .addEventListener("click", function (e) {
+  
+    pageSwitchingLogic(e);
 
-        document.querySelector('.intro').classList.remove('fade-out');
+  });
+}
 
-     }, 500);
+console.log(arrayOfTemplates);
 
-    }
+arrayOfBtnIds.forEach(function (arrayItem) {
+  switchPage(arrayItem);
+});
+
+
+////for page transitions
+
+let istransitioning = false;
+function transitionPage(currentPage) {
+
+  if(istransitioning){
+    return;
+  }
+
+  istransitioning = true;
+
+  if (!document.querySelector(".intro").classList.contains("fade-out")) {
+    document.querySelector(".intro").classList.add("fade-out");
+  } 
+
+      //empty home page
+  document.querySelector("#home-section").innerHTML = "";
+
+  document.querySelector("#home-section").innerHTML = currentPage;
+
+  setTimeout(function () {
+    document.querySelector(".intro").classList.remove("fade-out");
+      istransitioning = false;
+  }, 1000);
+
+
+}
+
+function aboutMeClick(){
+  document.addEventListener("click", function(e){
+    if(e.target.closest('#about-button')){
+   
+    e.currentTarget.id = 'about';
+
+          pageSwitchingLogic(e);
+
+          setActive(document.querySelector('#about'), 'about')
+
+     } 
+  }
+  )
+}
+
+aboutMeClick();//this initializes the listener so it can then be called on when clicked once
+
+function returnPageHistory(){
+
+  document.querySelector("#home-section").innerHTML = JSON.parse(localStorage.getItem('currentPage')) || currentPage;//current page by default should be home page
+ 
+}
+
+returnPageHistory();
+
+ console.log(currentPageId);
 
 
 //////////////////////////////////// end of page switching program ///////////////////////////////////////////////////////////////////////////////
 
 
-//////////////// floating stars ///////////////////////////////////////////////////////////////////////////////////
-   
 
-const arrayStars = [];
-for(let i = 0; i < 5; i++){
-  arrayStars.push([]);
-}
-
-for(let i = 0; i<=Math.floor(5/2); i++){
-  for(let j = 0; j < Math.floor(5/2) - i; j++){
-      arrayStars[i][j] = ' ';
-  }
-
-  for(let j = 4; j > Math.floor(5/2) + i; j--){
-    arrayStars[i][j] = ' ';
-  }
-
-  for(let j = Math.floor(5/2) - i; j <= Math.floor(5/2) + i; j++){
-    arrayStars[i][j] = '*';
-  }
-
-}
-
-  for(let i = 3; i < 5; i++){
-    for(let j = 4; j > 4 - (i - Math.floor(5/2)); j--){
-      arrayStars[i][j] = ' ';
-    }
-
-    for(let j = (i - Math.floor(5/2)) - 1; j >= 0; j--){
-      arrayStars[i][j] = ' ';
-    }
-
-    for(let j = i - Math.floor(5/2); j <= 4 - (i - Math.floor(5/2)); j++){
-      arrayStars[i][j] = '*';
-    }
-  }
-
-for(let i = 0; i < 5; i++){
-  console.log(arrayStars[i].join(''));
-}
-
-
-
-
-
-/*
-const arrayStars = [5][5];
-
-for(let i = 0; i<=5/2; i++){
-  for(let j = 0; j < 5/2 - i; j++){
-      arrayStars[i][j] = '';
-  }
-
-  for(let j = 4; j > 5/2 + i; j--){
-    arrayStars[i][j] = '';
-  }
-
-  for(let j = 5/2 - i; j <= 5/2 + i; j++){
-    arrayStars[i][j] = '*';
-  }
-
-}
-
-  for(let i = 3; i < 5; i++){
-    for(let j = 4; j > 5/2; j--){
-      arrayStars[i][j] = '';
-    }
-
-    for(let j = (i - 5/2) - 1; j >= 0; j--){
-      arrayStars[i][j] = '';
-    }
-
-    for(let j = i - 5/2; j >= 5/2; j--){
-      arrayStars[i][j] = '*';
-    }
-  }
-    */
-
-const arrayOfDiamonds = [];
-
-let listOfDiamonds = '';
-
-for(let i = 0; i < 15; i++){
-  arrayOfDiamonds[i] = ` <br> <svg class="svg" xmlns="http://w3.org" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00E676" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="floating-accent">
-  <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/>
-</svg> <br>`
-}
-
-console.log(arrayOfDiamonds)
-
-window.addEventListener("DOMContentLoaded", function(){
-
-  arrayOfDiamonds.forEach(function(arrayElt){
-      const diamond = arrayElt; 
-
-      listOfDiamonds += diamond;
-  })
-
-  listOfDiamonds += listOfDiamonds;
-
-  document.querySelector('.diamonds-js').innerHTML = `<div class="diamonds-inner">${listOfDiamonds}</div>`;
-}
-)
-
-
-///////////////////////////////  button selection on active and page transitions  /////////////////////////////////////////////////////////////////////////////
-
-
-
-
-
-  

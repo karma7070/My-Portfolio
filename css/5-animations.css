@@ -1,0 +1,50 @@
+
+/*////////////////////////////// Animations ////////////////////////////////*/
+
+@keyframes floatUpAndDown {
+  0% {
+    transform: translate(0px, 0px);
+  }
+
+  50% {
+    transform: translate(0px, -10px);
+  }
+
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+@keyframes infiniteDiamonds {
+  0% {
+    transform: translate(0);
+  }
+
+  100% {
+    transform: translate(0, -50%);
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translate(0, 90%);
+  }
+
+  20% {
+    transform: translate(0, -2%);
+  }
+}
+
+@keyframes opacityAnimation {
+  0% {
+    transform: translate(100%, 0);
+    opacity: 0;
+
+    /* */
+  }
+
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}

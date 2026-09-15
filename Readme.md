@@ -1,7 +1,7 @@
 # My-Portfolio
 I built my own portfolio with just html, css and javascript, hoping to incorporate next js soon after learning
 
-# HTML and CSS (Mostly CSS)
+# HTML and CSS and JS 
 
 ## Font-size
 This means 0.5rem is the least it can go and 4vw meaning viewport width is the rate at which it grows relative to the viewport or screen it's on and 2 rem is the maximum

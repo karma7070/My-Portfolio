@@ -6,6 +6,11 @@
   <title>Arthur's Portfolio</title>
 
   <link rel="stylesheet" href="../css/2-mainpage.css">
+  <link rel="stylesheet" href="../css/3-sidebar.css">
+  <link rel="stylesheet" href="../css/4.1-main-section-home.css">
+   <link rel="stylesheet" href="../css/5-animations.css">
+    <link rel="stylesheet" href="../css/4.2-main-section-about.css">
+
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,7 +49,7 @@
           
 
           <div class="buttons">
-          <button onclick=" switchPage('about')" class="singlebutton" id="about">
+          <button class="singlebutton" id="about">
                <div class="img-con">
               <img src="../images-and-icons/about.svg">
             </div>
@@ -117,24 +122,48 @@
         <div class="description">
           <a> I'm Arthur Matike</a>
           <h4>I am a software engineering undergraduate, tech enthusiast, somewhat video editor, backend engineering enthusiast.</h4>
-            <button href="#home">About me</button>
+            <button id="about-button">About me</button>
         </div>
 
       </main>
 
         <template class="about-template", id="about-section">
-          <div>
-sjkcn
+
+          <div class="about-main">
+
+          <div class="top-half">
+                
+            <div class="ab-info">
+              <p>Hello,</p>
+              <a>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi nesciunt repudiandae mollitia delectus ipsa natus soluta veritatis incidunt id. Ab, beatae soluta dolorem fugit magni amet consectetur quos. Molestiae, possimus.</a>
+              <br>
+              <br>
+              <button>Hire Me</button>
+            </div>
+
+            <div class="ab-imgcon">
+              <img src="../images-and-icons/anotherintro.png">
+            </div>
+            
           </div>
 
-          <div>
-sdc 
+          <div class="bottom-half">
+
+            <div class="left-bh">
+              <p class="gray">Name: <span class="green">Arthur Ndeley Efome Matike</span></p>
+              <p class="gray">Age: <span class="green">19</span></p>
+            </div>
+
+            <div class="right-bh">
+              <p class="gray">Location: <span class="green">Africa - Cameroon - Buea</span></p>
+              <p class="gray">Email: <span class="green">
+                <a href="arthurmatike@gmail.com">arthurmatike@gmail.com</a>
+              </span></p>
+            </div>
+
           </div>
 
-          <div>
-sckl
           </div>
-
         </template>
 
 
@@ -214,5 +243,7 @@ sckl
 
 
   <script src="../js/2-main-page.js"></script>
+  <script src="../js/3-sidebar.js"></script>
+  <script src="../js/4-diamonds.js"></script>
 </body>
 </html>
