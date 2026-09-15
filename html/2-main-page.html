@@ -10,73 +10,203 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
 </head>
 <body>
   
   <section class="main-page">
 
+<div class="diamonds-js">
+  5
+</div>
+
       <header>
 
-        <div>
-          <button>
-              <img>
+        <div class="buttons">
+          <button onclick=" switchPage('home')
+          " class="singlebutton" id="home">
+               <div class="img-con">
+              <img src="../images-and-icons/home.svg">
+            </div>
+               <div class="tooltip">
+                  <a>Home</a>
+               </div>
           </button>
-          <a>Home</a>
         </div>
           
 
-          <div>
-          <button>
-              <img>
+          <div class="buttons">
+          <button onclick=" switchPage('about')" class="singlebutton" id="about">
+               <div class="img-con">
+              <img src="../images-and-icons/about.svg">
+            </div>
+              <div class="tooltip">
+                <a>About</a>
+              </div>
           </button>
-          <a>About</a>
         </div>
 
-          <div>
-          <button>
-              <img>
+          <div class="buttons">
+          <button onclick="switchPage('projects')" class="singlebutton" id="projects">
+            <div class="img-con">
+              <img src="../images-and-icons/projects.svg">
+            </div>
+              <div class="tooltip">
+              <a>Projects</a>
+            </div>
           </button>
-          <a>Projects</a>
+            
         </div>
 
-          <div>
-          <button>
-              <img>
+          <div class="buttons">
+          <button onclick=" switchPage('skills')" class="singlebutton" id="skills">
+               <div class="img-con">
+              <img src="../images-and-icons/skills.svg">
+            </div>
+              <div class="tooltip">
+              <a>Skills</a>
+          </div>
           </button>
-          <a>Skills</a>
+          
         </div>
 
-          <div>
-          <button>
-              <img>
+          <div class="buttons">
+          <button onclick=" switchPage('CV') " class="singlebutton" id="CV">
+               <div class="img-con">
+              <img src="../images-and-icons/CV2.svg">
+            </div>
+              <div class="tooltip">
+              <a>CV/XP</a>
+          </div>
           </button>
-          <a>CV</a>
+          
         </div>
 
-          <div>
-          <button>
-              <img>
-          </button>
+          <div class="buttons">
+          <button onclick="switchPage('contact')" class="singlebutton" id="contact">
+               <div class="img-con">
+              <img src="../images-and-icons/contact3.svg">
+            </div>
+              <div class="tooltip">
           <a>Contact</a>
+          </div>
+          </button>
         </div>
 
       </header>
 
-      <section class="intro">
+      <main class="intro", id="home-section">
 
-        <div class="img">
-          <img>
+        <div class="intro-img-con">
+         <div>
+          <img src="../images-and-icons/anotherintro.png">
+          <div>
+            
+          </div>
+         </div>   
         </div>
 
         <div class="description">
-          <h2></h2>
-          <h4></h4>
+          <a> I'm Arthur Matike</a>
+          <h4>I am a software engineering undergraduate, tech enthusiast, somewhat video editor, backend engineering enthusiast.</h4>
+            <button href="#home">About me</button>
         </div>
 
-      </section>
+      </main>
+
+        <template class="about-template", id="about-section">
+          <div>
+sjkcn
+          </div>
+
+          <div>
+sdc 
+          </div>
+
+          <div>
+sckl
+          </div>
+
+        </template>
+
+
+        <template class="projects-template", id="projects-section">
+          <div>
+sjkcn
+          </div>
+
+          <div>
+sdc 
+          </div>
+
+          <div>
+sckl
+          </div>
+
+        </template>
+
+
+        <template class="skills-templates", id="skills-section">
+          <div>
+sjkcn
+          </div>
+
+          <div>
+sdc 
+          </div>
+
+          <div>
+sckl
+          </div>
+
+        </template>
+
+
+        <template class="CV-template", id="CV-section">
+          <div>
+sjkcn
+          </div>
+
+          <div>
+sdc 
+          </div>
+
+          <div>
+sckl
+          </div>
+
+        </template>
+
+
+        <template class="contact-template", id="contact-section">
+          <div>
+sjkcn
+          </div>
+
+          <div>
+sdc 
+          </div>
+
+          <div>
+sckl
+          </div>
+
+        </template>
 
   </section>
- 
+
+
+
+
+
 
   <footer>
 

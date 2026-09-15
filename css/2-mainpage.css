@@ -1,66 +1,353 @@
+@import url('https://googleapis.com');
+
 body{
   margin: 0;
   height: 100%;
+  font-family: 'Open Sans', sans-serif;
 
 }
 
+/* ////////////////// main page css  /////////////////////////////////////  */
 .main-page{
 border-style: solid;
-background-color: #f2f2f2;
-border-color: blue;
+background-color: white;
 
 display: flex;
 min-height: 100dvh;/*
 Check read me file for explanation*/
+
 }
 
+/* ////////////// sidebar /////////////////////////////////////////////// */
 .main-page header{
-  border-style: solid;
-  border-color: red;
-
   display: flex;
   flex-direction: column;
   width: 10%;
 
   justify-content: center;
   gap: 3.5rem;
+
+
+  border-right-color: rgb(222, 222, 222);
   
 }
 
-.main-page header div{
+.buttons{
   display: flex;
   align-items: center;
-
-
-  border-style: solid;
-  border-color: yellow;
+  
 }
 
-.main-page header div a{
-  background-color: darkblue;
+
+.singlebutton{
+  position: relative;
+  width: 50%;
+  min-height: 8dvh;
+  background-color: #1fcd8d;
+  border-radius: 20px;
+  border-style: none;
+  margin-left: 10%;
+  
+  /*   Check read me file for explanation, I was too lazy to add it here*/
+
+   z-index: 100;
+
+   transition: all 0.8s;
+
+}
+
+.img-con{
+  width: 70%;
+
+}
+
+
+.singlebutton img{
+  width: 100%;
+  height: 3.5dvh;
+  object-fit: contain;
   color: white;
 
+  margin-left: 15%;
+
+  pointer-events: none;
+
+}
+
+.singlebutton:hover .img-con{
+  width: 30%;
+ margin-left: 60%;
+ padding-right: 7%;
+}
+
+.singlebutton:active{
+  opacity: 0.5;
+}
+
+.singlebutton:hover{
+
+  box-shadow: 
+    0 10px 16px -3px rgba(21, 237, 93, 0.5), 
+    0 15px 14px -3px rgba(20, 85, 71, 0.06);
+
+  transform: translateY(-10%);
+
+  border-radius: 20px;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+ }
+
+ .togglebutton{
+
+  box-shadow: 
+    0 10px 16px -3px rgba(21, 237, 93, 0.5), 
+    0 15px 14px -3px rgba(20, 85, 71, 0.06);
+
+  transform: translateY(-10%);
+
+  border-radius: 20px;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+ }
+
+.buttons{
+  position: relative;
+}
+
+.tooltip{
+
+  pointer-events: none;
+
+  position: absolute;
+  left: 1px;
+  top: 1px;
+  bottom: 1px;
+  right: 60px;
+
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  background-color: #00A86B;
+  color: white;
+  text-align: center;
+
   font-family: roboto, sans-serif;
-  padding-left: 7px;
-   border-radius: 5px;
+  font-size: clamp(0.2rem, 1vw, 6rem);
+  padding-left: 5px;
+  padding-right: 5px;
+   border-radius: 19px;
+
+   border-style: solid;
+
+   transition: opacity 0.7s ease-in-out;
+
+   opacity: 0;
+
+   z-index: 1;
  
 }
 
-header button{
-  width: 40%;
-  font-size: clamp(0.2rem, 2vw, 2rem); /* Check read me file for explanation, I was too lazy to add it*/
 
-  border-radius: 50%;
-   margin-right: -7px;
 
-   z-index: 1;
+.singlebutton:hover .tooltip{
+  opacity: 1;
+  box-shadow: 0px 0px 10px 2px #00A86B(0,0,0,0.5);
+
 }
+
+.tooltip a{
+  text-decoration: none;
+  color: white;
+
+  padding-right: 20%;
+
+}
+
+/* ///////////////////////////  sidebar ends //////////////////////////////////////// */
+
+/* ///////////////////// main page starts //////////////////////////////////// */
 
 .main-page .intro{
+
+
+  width: 90%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10dvh;
+
+  animation: slideIn 10s ease-in-out 1;
+
+  opacity: 1;
+
+  transition: opacity 0.5s ease-in-out;
+}
+
+.fade-out{
+ opacity: 0;
+
+ animation: opacityAnimation 0.5s ease 1;
+}
+
+.intro .intro-img-con{
+  width: 35%;
   border-style: solid;
-  border-color: orange;
+  border-color: green;
+    border-style: none;
+      border-radius: 20px;
+    overflow: hidden;
+     box-shadow: 
+    0 12px 20px -8px rgba(0, 50, 30, 0.3),  /* Tight dark green shadow underneath */
+    0 25px 40px -12px rgba(0, 0, 0, 0.15);  /* Large soft fade that spans lower */
+
+    transition: all 0.5s ease;
+
+    animation: floatUpAndDown 3s ease-in-out infinite;
+}
+
+.intro .intro-img-con img{
+  object-fit: contain;
+  width: 100%;
+
+  vertical-align: bottom;
+  border-radius: 20px;
 
 }
 
+.description{
+  width: 55%;
+  vertical-align: top;
+}
+
+.description a{
+  color: #00A86B;
+  font-family: 'Poppins';
+  font-weight: bolder;
+  font-size: clamp(0.2rem, 7vw, 40rem);
+}
+
+.description h4{
+  text-align: left;
+  color: gray;
+  width: 50%;
+}
+
+.description button{
+  padding: 1%;
+  width: 20%;
+  border-radius: 20px;
+
+
+  font-weight: bold;
+  font-size: 18px;
+
+  border-style: solid;
+  border-color:#00A86B;
+  color: #00A86B;
+  border-width: 5px;
+
+  box-shadow: #00A86B;
+
+  transition: all 0.5s ease;
+}
+
+.description button:hover{
+  background-color: #00A86B;
+  color: white;
+    box-shadow: 
+    0 12px 20px -8px rgba(0, 50, 30, 0.3),  
+    0 25px 40px -12px rgba(0, 0, 0, 0.15);  
+  transform: translate(0, -5px);
+}
+
+/*/////////////////////////// main page ends ///////////////////////////////////////*/
+
+/* //////////////////////////////////  diamonds start /////////////////////////// */
+
+.diamonds-js{
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  left: 90%;
+
+  text-align: center;
+
+
+}
+
+.diamonds-inner {
+  animation: infiniteDiamonds 10s linear infinite;
+}
+
+/*////////////////////////////// Animations ////////////////////////////////*/
+
+@keyframes floatUpAndDown{
+  0%{
+    transform: translate(0px, 0px);
+  }
+
+  50%{
+    transform: translate(0px, -10px);
+  }
+
+  100%{
+    transform: translate(0px, 0px);
+  }
+}
+
+@keyframes infiniteDiamonds{
+  0%{
+
+    transform: translate(0);
+  }
+
+  100%{
+    transform: translate(0, -50%);
+  }
+}
+
+@keyframes slideIn{
+  0%{
+    transform: translate(0, 50%);
+  }
+
+  20%{
+    transform: translate(0, -3%);
+  }
+}
+
+@keyframes opacityAnimation{
+  0%{
+    opacity: 1;
+  }
+
+  25%{
+    opacity: 0.5;
+  }
+
+  50%{
+    opacity: 0;
+  }
+
+  75%{
+    opacity: 0.5;
+  }
+
+  100%{
+    opacity: 1;
+  }
+}
 
 
