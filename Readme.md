@@ -102,3 +102,31 @@ I ran it into a 2 time clicking problem and had to add a loop that initializes t
 ## Sliding diamonds
 
 So for the sliding diamonds, I had some trouble because I placed it in a container then made it move 50% up from it's initial position in a container that didn't scale to it's element but the entire screen so it glitched as expected. I then created a container to hold it after inquiring about it from Claude the goat LLM and it worked.
+
+## Saving States
+
+So I save the page states using localStorage.setItem(itemname, JSON.stringify(item)) and then retrieve them from local storage using localStorage.getIem(itemname) but I usually have to wrap it JSON.parse() so it's converted back into non-string.
+
+So I save the current page in a localStorage called "currentPage", then on page refresh or open this saved page is loaded into main section's innerHTML so the last page it was on stays even after refresh
+
+For the buttons I used leavingPageId which stores the id of the page that is currently being displayed so if the button is clicked again another slide in of the same page doesn't happen. Now this is used to reference the button linked the page and then the button's state is set to active on refresh by getting its id and running into the setActive(actButton, id) function on startup
+
+I literally just woke up and thought of these things btw, God is good, I just pray and He fills me with knowledge.
+
+## Page Modifications In Real time
+
+So I noticed that when the HTML elements are modified the pages weren't being modified because most of the update functions were in the page switching function not global. So I made them update by setting the innerHTML of main section from the localStorage currentPage each time since the saving of current page is global doing this makes the changes applied to current page save and then display in real time.
+
+I did a similar thing for projects and updating them. Simply displayed the list of projects in localStorage on refresh.
+
+## Refresh killing JS input
+
+I had a nasty problem that where an error kept popping up when I tagged elements in a templlate. While they're in a template they do not work like normal elements, they're 'invisible' so the innerHTML couldn't get to them and display what was on them since their ids are required and could not be found so I asked Claude PC and it didn't help, but Claude Mobile is genuinely built different and it helped me point the problem with just to console log screenshots and the fix was simply calling the function that displayed only when the section is currently active i.e when 'leavingPage' which is actually the current page is the template who's elements ids are required.
+
+So only when the section is active before the display functions are called, in summary.
+
+## height:auto; overflow y: auto;
+
+If you have container trouble height auto is the way to go
+
+Overflow makes the page content to fit and become a scroll bar type container so it's good too

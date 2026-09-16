@@ -15,7 +15,7 @@ console.log(arrayClone);
 function returnVal(){
 
   for(let i = 0; i < arrayOfIds.length; i++){
-    if(arrayOfIds[i] === switchId){
+    if(arrayOfIds[i] === switchId){//check which section was being displayed and return its index
       return i;
     }
   }
@@ -30,7 +30,7 @@ console.log(currentIndex);
 console.log(switchId);
 
 setActive(document.querySelector('#' + arrayOfBtnIds[currentIndex]), arrayOfBtnIds[currentIndex])
-//set the button to active on refresh after getting the section index so that it stays active even after refresh
+//set the button to active on refresh after getting the section index so that it stays active even after
 
 function setActive(actButton, id){
 

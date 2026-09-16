@@ -1,0 +1,90 @@
+.skill-con{
+
+  display: flex;
+  flex-direction: column;
+  gap: 3%;
+  height: 90dvh;
+  width: 85%;
+  margin-left: -6%;
+
+  font-family: 'Poppins', sans-serif;
+  vertical-align: middle;
+    overflow-y: auto;
+
+}
+
+.skill-con::-webkit-scrollbar {
+  display: none; 
+}
+
+.featured, .languages,
+ .Frontend, .Backend{
+border-style: solid;
+border-width: 1px;
+border-color: rgb(211, 211, 211);
+height: auto;
+border-radius: 6px;
+padding-left: 4px;
+}
+
+.featured p, .languages p,
+ .Frontend p, .Backend p{
+   font-size: clamp(0.2rem, 2.5dvh, 5rem);
+  font-weight: bolder;
+  color: rgb(3, 178, 122);
+
+
+ }
+
+ .skill-display{
+   font-size: clamp(0.2rem, 2dvh, 5rem);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+
+ }
+
+ .single-skill{
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  width: 70%;
+  height: 50%;
+
+
+
+ }
+
+ .single-skill img{
+  width: 30%;
+  height: 90%;
+
+ }
+
+ .single-skill a{
+  font-size: clamp(0.01rem, 2dvh, 3rem);
+  font-weight: bold;
+  border-style: solid;
+  padding: 2%;
+  border-radius: 10px;
+  color: rgb(1, 57, 48);
+  width: fit-content;
+
+ }
+
+ progress {
+  width: 120%;
+  height: 10%;
+  border-radius: 100px;
+  overflow: hidden;
+  margin-left: 1.9%;
+}
+
+progress::-webkit-progress-bar {
+  background-color: #e5e5e5;
+  border-radius: 100px;
+}
+
+

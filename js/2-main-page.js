@@ -1,3 +1,27 @@
+
+//////////////// localStorage defaults - run first, before anything reads these ////////////////
+
+if(!localStorage.getItem('currentPage')){
+  localStorage.setItem('currentPage', JSON.stringify(''));
+}
+
+if(!localStorage.getItem('leavingPageId')){
+  localStorage.setItem('leavingPageId', JSON.stringify('#home-section'));
+}
+
+if(!localStorage.getItem('projectList')){
+  localStorage.setItem('projectList', JSON.stringify(''));
+}
+
+// arrayOfSkillIds isn't declared yet at this point in main-page.js,
+// so hardcode the same 4 ids here to seed their '...list' keys
+['feat-sk', 'lan-sk', 'front-sk', 'back-sk'].forEach(function(id){
+  if(!localStorage.getItem(id + 'list')){
+    localStorage.setItem(id + 'list', JSON.stringify(''));
+  }
+});
+
+
 /////////////////////////////////// Switching Pages and Page transitions   ///////////////////////////////////////////
 
 const classOfTemplateIds = {
@@ -18,6 +42,8 @@ const arrayOfIds = [
   "#contact-section",
 ];
 
+let arrayOfSkillIds = ["feat-sk", "lan-sk", "front-sk", "back-sk"]
+
 
 const arrayOfBtnIds = ["home", "about", "projects", "skills", "CV", "contact"];
 
@@ -34,7 +60,7 @@ console.log(localStorage.getItem('currentPage'));
 let currentPageId = '';//page being switched to
 
 
-let leavingPageId = JSON.parse(localStorage.getItem('leavingPageId')) || '';//page we're leaving to current page
+let leavingPageId = JSON.parse(localStorage.getItem('leavingPageId')) || currentPageId;//page we're leaving to current page
 
 
 for (let i = 0; i < arrayOfIds.length; i++) {
@@ -56,7 +82,7 @@ let arrayClone = [];
 
 function returnIndex(array, button) {
 
-  newbutton = "#" + button;
+ let newbutton = "#" + button;
 
   console.log("return index: " + button);
 
@@ -141,6 +167,10 @@ function switchPage(button) {
   
     pageSwitchingLogic(e);
 
+      refreshProjects();
+
+  refreshSkills();// restore page history even after leaving on when entering page
+
   });
 }
 
@@ -191,7 +221,7 @@ function transitionPage(currentPage) {
 function aboutMeClick(){
 
   document.addEventListener("click", function(e){
-    
+
     if(e.target.closest('#about-button')){
    
     e.currentTarget.id = 'about';
@@ -216,6 +246,84 @@ function returnPageHistory(){
 returnPageHistory();
 
  console.log(currentPageId);
+
+
+ function refreshProjects(){
+
+  arrayOfTemplates[2] = `<div class="project-grid">
+  ${JSON.parse(localStorage.getItem('projectList'))}</div>`
+
+ }
+
+ refreshProjects();//so the newly added projects are also shown
+   
+ function refreshSkills(){
+
+  arrayOfTemplates[3] = ` <div class="skill-con">
+
+    <div class="featured">
+            <p>Featured</p>
+            <div class="skill-display" id="feat-sk">
+              ${JSON.parse(localStorage.getItem(arrayOfSkillIds[0] + 'list')) || ''}
+            </div>
+          </div>
+
+          <div class="languages">
+            <p>Languages</p>
+            <div class="skill-display" id="lan-sk">
+              ${JSON.parse(localStorage.getItem(arrayOfSkillIds[1] + 'list')) || ''}
+            </div>
+            </div>
+         
+          <div class="Frontend">
+            <p>Front-end</p>
+            <div class="skill-display" id="front-sk">
+              ${JSON.parse(localStorage.getItem(arrayOfSkillIds[2] + 'list')) || ''}
+            </div>
+          </div>
+
+          <div class="Backend">
+            <p>Back-end</p>
+            <div class="skill-display" id="back-sk">
+              ${JSON.parse(localStorage.getItem(arrayOfSkillIds[3] + 'list')) || ''}
+            </div>
+          </div>
+
+        </div>`
+
+ }
+
+ refreshSkills();
+
+function displayProjectsOnRefresh(){
+  //list of projects
+
+  console.log(JSON.parse(localStorage.getItem('projectList')))
+if(leavingPageId === '#projects-section'){
+document.querySelector('.project-grid').innerHTML = JSON.parse(localStorage.getItem('projectList')) || `<div><div>`;
+}
+}
+
+displayProjectsOnRefresh();
+
+
+
+function displaySkillsOnRefresh(){
+   //skills
+   if(leavingPageId === '#skills-section'){
+document.querySelector('#feat-sk').innerHTML = JSON.parse(localStorage.getItem(arrayOfSkillIds[0] + 'list'));
+document.querySelector('#lan-sk').innerHTML = JSON.parse(localStorage.getItem(arrayOfSkillIds[1] + 'list'));
+document.querySelector('#front-sk').innerHTML = JSON.parse(localStorage.getItem(arrayOfSkillIds[2] + 'list'));
+document.querySelector('#back-sk').innerHTML = JSON.parse(localStorage.getItem(arrayOfSkillIds[3] + 'list'));
+   }
+
+
+}
+
+displaySkillsOnRefresh()
+
+
+
 
 
 //////////////////////////////////// end of page switching program ///////////////////////////////////////////////////////////////////////////////
