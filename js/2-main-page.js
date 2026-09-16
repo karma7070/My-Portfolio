@@ -18,21 +18,24 @@ const arrayOfIds = [
   "#contact-section",
 ];
 
+
 const arrayOfBtnIds = ["home", "about", "projects", "skills", "CV", "contact"];
+
 
 const arrayOfTemplates = [];
 
-let currentPage = localStorage.getItem("currentPage") || arrayOfTemplates[0];
-//this makes the current page on refresh to either be the most recent page or
 
 //localStorage.clear();
 
 
 console.log(localStorage.getItem('currentPage'));
 
+
 let currentPageId = '';//page being switched to
 
+
 let leavingPageId = JSON.parse(localStorage.getItem('leavingPageId')) || '';//page we're leaving to current page
+
 
 for (let i = 0; i < arrayOfIds.length; i++) {
   arrayOfTemplates.push(document.querySelector(arrayOfIds[i]).innerHTML);
@@ -44,18 +47,27 @@ for (let i = 0; i < arrayOfIds.length; i++) {
 
 localStorage.setItem("arrayOfTemplates", JSON.stringify(arrayOfTemplates));
 
+
+let currentPage = localStorage.getItem("currentPage") || arrayOfTemplates[0];
+//this makes the current page on refresh to either be the most recent page or
+
+
 let arrayClone = [];
 
 function returnIndex(array, button) {
+
   newbutton = "#" + button;
 
   console.log("return index: " + button);
 
   for (let i = 0; i < array.length; i++) {
+
     console.log(newbutton, array[i]);
 
     if (array[i] === newbutton) {
+
       return i;
+
     }
   }
 
@@ -78,7 +90,9 @@ function pageSwitchingLogic(e){
     //tagrget.id returns the button's id which is either 'home' or 'about' or.....
     //so we add '-section' so we can compare against the template ids
     for (let i = 0; i < arrayOfTemplates.length; i++) {
+
       arrayClone[i] = arrayOfTemplates[i];
+
     }
 
     console.log(arrayClone);
@@ -86,7 +100,9 @@ function pageSwitchingLogic(e){
     //if the page is still transitioning then it returns true and returns to the leaving page. This stops the current page id from being set everytime
 
     if(istransitioning){ 
+
       return;
+
     }
 
     currentPage = arrayClone[index];
@@ -131,7 +147,9 @@ function switchPage(button) {
 console.log(arrayOfTemplates);
 
 arrayOfBtnIds.forEach(function (arrayItem) {
+
   switchPage(arrayItem);
+
 });
 
 
@@ -141,13 +159,17 @@ let istransitioning = false;
 function transitionPage(currentPage) {
 
   if(istransitioning){
+
     return;
+
   }
 
   istransitioning = true;
 
   if (!document.querySelector(".intro").classList.contains("fade-out")) {
+
     document.querySelector(".intro").classList.add("fade-out");
+
   } 
 
       //empty home page
@@ -156,15 +178,20 @@ function transitionPage(currentPage) {
   document.querySelector("#home-section").innerHTML = currentPage;
 
   setTimeout(function () {
+
     document.querySelector(".intro").classList.remove("fade-out");
+
       istransitioning = false;
+
   }, 1000);
 
 
 }
 
 function aboutMeClick(){
+
   document.addEventListener("click", function(e){
+    
     if(e.target.closest('#about-button')){
    
     e.currentTarget.id = 'about';
