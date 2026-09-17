@@ -1,18 +1,22 @@
 .CV-resume-page{
   display: flex;
-  flex-direction: column;
   width: 80%;
   height: 90dvh;
   gap: 9%;
   padding: 1%;
+  background-color: rgb(227, 239, 235);
+  margin-left: -6%;
+  border-radius: 20px;
 
   justify-content: center;
   align-items: center;
   border-style: solid;
+  border-width: 1px;
+  border-color: rgb(216, 215, 215);
 
   overflow-y: auto;
 }
-
+/*
 .button-con{
     display: flex;
   width: 50%;
@@ -22,8 +26,10 @@
   gap: 6%;
   border-style: solid;
 
+
   position: relative;
 }
+  */
 
 .floating-div{
   border-style: solid;
@@ -31,15 +37,43 @@
   align-items: center;
   justify-content: center;
   width: 30%;
-  height: 40%;
+  height: 20%;
   flex-direction: column;
+  background-color: white;
+  border-radius: 20px;
+  color: #1fcd8d;
+
+
 }
 
-.floating-div button{
-
+.floating-div a{
   width: 40%;
 }
 
+.floating-div a button{
+  padding: 4%;
+  width: 100%;
+  border-radius: 20px;
+  font-weight: bold;
+
+border-style: none;
+
+  transition: all 0.5s ease-in-out ;
+}
+
+.floating-div a button:hover{
+  background-color: #1fcd8d;
+  color: white;
+  border-color: rgb(184, 178, 178);
+  transform: translate(0, -5%);
+}
+
+.floating-div a button:active{
+  box-shadow: inset 0px 2px 2px 19px rgb(184, 178, 178);
+}
+
+
+/*
 .CV-res-con{
   height: 60%;
   width: 80%;
@@ -63,3 +97,4 @@
   animation: opacityAnimation 2s ease 1;
   opacity: 1;
 }
+  */
