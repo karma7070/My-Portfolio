@@ -1,0 +1,247 @@
+
+body {
+  margin: 0;
+  height: 100dvh;
+  font-family: "Poppins", sans-serif;
+}
+
+section{
+  border-style: solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100dvh; 
+  padding: 3%;
+
+  overflow-y: auto;
+
+}
+
+main{
+  border-style: solid;
+  display: flex;
+  flex-direction: column;
+  min-height: 90dvh; 
+  width: 60%;
+  background-color: black;
+
+  padding: 1%;
+
+  /*
+Check read me file for explanation*/
+
+display: flex;
+}
+
+.cv-top-con, .cv-bottom-con{
+ /*border-style: solid;
+  border-color: red;*/ 
+
+}
+
+.cv-top-con{
+  background-color: rgb(227, 239, 235);
+    border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+}
+
+.cv-top{
+ /* border-style: solid;
+  border-color: blue;*/
+
+
+  display: flex;
+  justify-content: center;
+  gap: 3%;
+  height: fit-content;
+
+  padding: 5%;
+}
+
+.profile-con{
+  width: 30%;
+  height: 40%;
+
+  display: flex;
+  justify-content: right;
+
+}
+
+.profile-con img{
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+  vertical-align: bottom;
+  border-style: solid;
+  border-width: 6px;
+  border-color: white;
+
+  border-top-right-radius: 210px;
+  border-top-left-radius: 210px;
+  border-bottom-left-radius: 210px;
+}
+
+
+.cv-top-info{
+ /*border-style: solid;
+  border-color: blueviolet;*/
+  width: 70%;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-between;
+
+}
+
+.cv-top-info-top{
+    display: flex;
+  flex-direction: column;
+  line-height: 40px;
+}
+
+.cv-top-info-top svg{
+  stroke: #1fcd8d;
+  border-radius: 3px;
+}
+
+
+.cv-top-info-top a{
+  font-size: clamp(0.2rem, 5dvh, 10rem);
+  font-weight: bold;
+}
+
+.last-name{
+  font-size: clamp(0.2rem, 5dvh, 10rem);
+  font-weight: 200;
+  color: #1fcd8d;
+
+}
+
+.field{
+  font-size: clamp(0.2rem, 2.5dvh, 10rem);
+  font-weight: 200;
+  color: rgb(132, 132, 132);
+  letter-spacing: 3px;
+  margin-top: -1%;
+}
+
+
+.cv-top-info-bottom{
+  
+ /*border-style: solid;
+ border-color: red;
+ just in case something goes wrong ik where to check
+ */ 
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  height: fit-content;
+
+  padding: 1%;
+  background-color: #3ef6b3;
+  color: white;
+  border-radius: 15px;
+
+}
+
+.cv-top-info-bottom-items{
+ /*border-style: solid;*/ 
+  display: flex;
+  align-items: center;
+
+  margin-top: 2%;
+}
+
+.cv-top-info-bottom-items img{
+  width: 7%;
+  margin-right: 1%;
+ /*border-style: solid;*/ 
+}
+
+.cv-top-info-bottom-items a{
+  font-size: clamp(0.2rem, 1dvh, 4rem);
+  font-weight: bold;
+}
+
+.cv-top-info-bottom-items a span{
+  font-weight: 400;
+}
+
+/*////////////////// Level 2: CV bottom //////////////////////////////*/
+
+.cv-bottom-con{
+  padding: 5%;
+
+  background-color: white;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.grids-con{
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+ /* border-style: solid;*/
+  gap: 5%;
+  height: fit-content;
+
+}
+
+.grid-con-left{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.grid-con-right{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.single-grid{
+  position: relative;
+ /* border-style: solid;
+  border-color: rgb(145, 28, 230);*/
+  text-align: justify;
+  background-color: rgb(227, 239, 235);
+  border-radius: 20px;
+
+  padding: 4%;
+}
+
+.floating-label{
+  position: absolute;
+  top: -24px;
+  left: 25%;
+
+  width: 50%;
+  background-color: #3ef6b3;
+  color: white;
+  padding-left: 5%;
+  padding-right: 5%;
+  font-weight: bold;
+  padding: 2%;
+  border-radius: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.floating-label img{
+  width: 12%;
+  margin-right: 2%;
+}
+
+.fullwidth{
+   grid-column: 1/-1;
+}
+
+
+

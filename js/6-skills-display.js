@@ -40,8 +40,8 @@ let skillObjects = {
   css:{skillimg:'../images-and-icons/icons/css-3-svgrepo-com.svg', skillname:'CSS', progress:80},
   js:{skillimg:'../images-and-icons/icons/js-svgrepo-com.svg', skillname:'JS', progress:50},
   c:{skillimg:'../images-and-icons/icons/c-svgrepo-com.svg', skillname:'C', progress:50},
-  cplusplus:{skillimg:'../images-and-icons/icons/c-plusplus-svgrepo-com.svg', skillname:'C++', progress:80},
-  java:{skillimg:'../images-and-icons/icons/java-svgrepo-com.svg', skillname:'Java', progress:80}
+  cplusplus:{skillimg:'../images-and-icons/icons/c-plusplus-svgrepo-com.svg', skillname:'C++', progress:40},
+  java:{skillimg:'../images-and-icons/icons/java-svgrepo-com.svg', skillname:'Java', progress:50}
 }
 
 function addSkill(skill, array, index1){//skill to be added, array to be added to, index for getting localStorage name
@@ -53,8 +53,11 @@ array.forEach(function(elt){
 
   let curSkill = `<div class="single-skill">
               <img src="${elt.skillimg}">
+              <div class="singleskill-info-con">
                <a> ${elt.skillname} </a>
+               <div class="prog-value">${elt.progress}%</div>
                <progress value="${elt.progress}" max="100" class="progBar"></progress> 
+               </div>
             </div>`;
 
            arrayOfDisplayLists[index1] += curSkill; 

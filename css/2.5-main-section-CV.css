@@ -1,0 +1,65 @@
+.CV-resume-page{
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: 90dvh;
+  gap: 9%;
+  padding: 1%;
+
+  justify-content: center;
+  align-items: center;
+  border-style: solid;
+
+  overflow-y: auto;
+}
+
+.button-con{
+    display: flex;
+  width: 50%;
+  height: 30%;
+  justify-content: center;
+  align-items: center;
+  gap: 6%;
+  border-style: solid;
+
+  position: relative;
+}
+
+.floating-div{
+  border-style: solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  height: 40%;
+  flex-direction: column;
+}
+
+.floating-div button{
+
+  width: 40%;
+}
+
+.CV-res-con{
+  height: 60%;
+  width: 80%;
+  border-style: solid;
+  
+  position: relative;
+}
+
+.CV-file{
+  opacity: 1;
+  border-style: solid;
+  width: ;
+}
+
+.resume-file{
+ opacity: 0;
+  border-style: solid;
+}
+
+.op-toggle{
+  animation: opacityAnimation 2s ease 1;
+  opacity: 1;
+}

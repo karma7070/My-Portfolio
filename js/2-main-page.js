@@ -322,9 +322,15 @@ document.querySelector('#back-sk').innerHTML = JSON.parse(localStorage.getItem(a
 
 displaySkillsOnRefresh()
 
+function displayCV_XP(){
 
+  if(leavingPageId === '#CV-section'){
+    displayCV();
+    displayResume();
+  }
+}
 
-
+displayCV_XP();
 
 //////////////////////////////////// end of page switching program ///////////////////////////////////////////////////////////////////////////////
 
