@@ -15,7 +15,7 @@ console.log(arrayClone);
 function returnVal(){
 
   for(let i = 0; i < arrayOfIds.length; i++){
-    if(arrayOfIds[i] === switchId){//check which section was being displayed and return its index
+    if(arrayOfIds[i] === switchId){//check which section was being displayed and return its
       return i;
     }
   }

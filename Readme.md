@@ -130,3 +130,6 @@ So only when the section is active before the display functions are called, in s
 If you have container trouble height auto is the way to go
 
 Overflow makes the page content to fit and become a scroll bar type container so it's good too
+
+
+Note: Increase main-page's bottom padding, the section tags not the main tags

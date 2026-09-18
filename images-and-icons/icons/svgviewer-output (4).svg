@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <!-- Background Color -->
+  <rect width="500" height="500" fill="
+#fcfbf7" />
+
+  <!-- Perfect Center Alignment Group -->
+  <g transform="translate(0, 0)">
+
+    <!-- Outer Diamond Frame -->
+    <path d="M 250,45 L 455,250 L 250,455 L 45,250 Z" 
+          fill="none" 
+          stroke="
+#2d3133" 
+          stroke-width="12" 
+          stroke-linejoin="miter" />
+
+    <!-- Inner Fine Frame Detail -->
+    <path d="M 250,52 L 448,250 L 250,448 L 52,250 Z" 
+          fill="none" 
+          stroke="
+#42474a" 
+          stroke-width="2" 
+          stroke-linejoin="miter" />
+
+    <defs>
+      <!-- Premium Dark Gradients -->
+      <linearGradient id="mainBodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="
+#4c5154" />
+        <stop offset="100%" stop-color="
+#212324" />
+      </linearGradient>
+      <linearGradient id="dynamicSwooshGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="
+#161718" />
+        <stop offset="60%" stop-color="
+#3d4144" />
+        <stop offset="100%" stop-color="
+#5a6063" />
+      </linearGradient>
+    </defs>
+
+    <!-- Main Solid Letter 'A' Structure -->
+    <path d="M 202,152 L 298,152 L 362,335 L 298,335 L 279,282 L 221,282 L 202,335 L 138,335 Z" 
+          fill="url(#mainBodyGrad)" />
+
+    <!-- Inner Triangular Window Cutout -->
+    <polygon points="250,192 227,247 273,247" fill="
+#fcfbf7" />
+
+    <!-- Explicitly Drawn Negative Space Path (Slices clean through the letter) -->
+    <path d="M 125,335 
+             C 140,298 182,267 245,246 
+             C 302,225 328,198 328,145
+             C 334,185 320,250 274,282
+             C 225,315 165,328 125,335 Z" 
+          fill="
+#fcfbf7" />
+
+    <!-- Dynamic Overlapping Swoosh / Wave Element -->
+    <path d="M 142,328 
+             C 152,302 188,271 247,250 
+             C 298,231 320,210 320,162 
+             C 326,194 311,248 269,277 
+             C 224,307 170,320 142,328 Z" 
+          fill="url(#dynamicSwooshGrad)" />
+
+    <!-- Sharp shadow separation line to give the 3D ribbon look -->
+    <path d="M 142,328 C 152,302 188,271 247,250 C 298,231 320,162" 
+          fill="none" 
+          stroke="
+#111212" 
+          stroke-width="2.5" 
+          opacity="0.35" />
+  </g>
+</svg>

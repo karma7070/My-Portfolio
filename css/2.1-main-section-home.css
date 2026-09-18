@@ -3,7 +3,6 @@
 
 .main-page .intro {
   width: 90%;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -32,6 +31,7 @@
       rgba(0, 0, 0, 0.15); /* Large soft fade that spans lower */
 
   transition: all 0.5s ease;
+    aspect-ratio: 5604 / 4032;
 
   animation: floatUpAndDown 3s ease-in-out infinite;
 }
@@ -39,7 +39,6 @@
 .intro .intro-img-con img {
   object-fit: contain;
   width: 100%;
-
   vertical-align: bottom;
   border-radius: 20px;
 }
@@ -47,6 +46,7 @@
 .description {
   width: 55%;
   vertical-align: top;
+  
 }
 
 .description a {
@@ -60,16 +60,15 @@
   text-align: left;
   color: gray;
   width: 50%;
+  font-size: clamp(0.2rem, 1vw, 4rem);
 }
 
 .description button {
   padding: 1%;
   width: 20%;
   border-radius: 20px;
-
+  font-size: clamp(0.2rem, 1vw, 10rem);
   font-weight: bold;
-  font-size: 18px;
-
   border-style: solid;
   border-color: #00a86b;
   color: #00a86b;
@@ -105,4 +104,110 @@
 
 .diamonds-inner {
   animation: infiniteDiamonds 10s linear infinite;
+}
+
+
+
+ /*/////////////////////////////////////////////*/
+
+@media(max-width: 1000px) and (min-width: 601px){
+
+  .main-page .intro{
+    display: flex;
+    gap: 30px;
+    padding-top: 5%;
+    padding-bottom: 2%;
+    border-radius: 4px;
+    
+  
+  }
+
+    .intro .intro-img-con{
+    width: 50%;
+    height: fit-content;
+    border-style: solid;
+    border-color: gray;
+    border-radius: 30px;
+  }
+
+  .intro .intro-img-con img{
+    vertical-align: bottom;
+  }
+
+  .description{
+    width: 80%;
+    border-radius: 20px;
+    padding: 1%;
+  }
+
+  .description h4 {
+  color: gray;
+  width: 100%;
+  font-size: clamp(0.2rem, 1.5vw, 10rem);
+}
+
+.description button{
+  align-self: center;
+  font-size: clamp(0.2rem, 1.5vw, 40rem);
+  width: 50%;
+  border-width: 2px;
+}
+
+} 
+
+@media (max-width: 600px){
+
+  .main-page .intro{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: fit-content;
+    gap: 30px;
+    padding-top: 5%;
+    padding-bottom: 2%;
+    vertical-align: top;
+    border-radius: 4px;
+    
+  
+  }
+
+  .intro .intro-img-con{
+    width: 80%;
+    height: fit-content;
+    border-style: solid;
+    border-color: gray;
+    border-radius: 30px;
+  }
+
+  .intro .intro-img-con img{
+    vertical-align: bottom;
+  }
+
+  .description{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(211, 208, 208);
+    background-color:  rgb(227, 239, 235);
+    border-radius: 20px;
+    padding: 1%;
+  }
+
+  .description h4 {
+  text-align: center;
+  color: gray;
+  width: 100%;
+  font-size: clamp(0.2rem, 3vw, 10rem);
+}
+
+.description button{
+  align-self: center;
+  font-size: clamp(0.2rem, 3vw, 40rem);
+  width: 50%;
+  border-width: 2px;
+}
+
 }

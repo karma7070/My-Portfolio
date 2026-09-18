@@ -5,12 +5,12 @@
 
 .about-main{
 
-  width: 70%;
-
+  width: 80%;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin-left: -15%;
+  height: 90dvh;
+  margin-left: -6%;
   font-family: 'Poppins', sans-serif;
 
 }
@@ -29,10 +29,12 @@
   border-width: 0.5px;
   border-color: rgb(203, 203, 203);
   border-radius: 10px;
+  font-size: clamp(0.2rem, 1vw, 10rem);
+ 
 }
 
 .ab-info p{
-  font-size: clamp(0.2rem, 10vh, 10rem);
+  font-size: clamp(0.2rem, 6vw, 10rem);
   font-family: 'Open Sans';
   font-weight: bolder;
   margin-bottom: -1%;
@@ -53,6 +55,7 @@
   border-style: solid;
   border-radius: 40px;
   font-weight: bolder;
+  font-size: clamp(0.2rem, 1vw, 10rem);
 
   transition: transform 0.5s;
 }
@@ -82,7 +85,7 @@
 
 .ab-imgcon img{
   width: 100%;
-  border-radius: 5%;
+  border-radius: 10px;
   vertical-align: bottom;
 }
 
@@ -91,12 +94,21 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: clamp(0.2rem, 3dvh, 10rem);
+  font-size: clamp(0.2rem, 1.2vw, 10rem);
   padding: 1%;
   border-style: solid;
   border-width: 0.5px;
   border-color: rgb(203, 203, 203);
   border-radius: 10px;
+}
+
+.extra-half{
+    border-style: solid;
+  border-width: 0.5px;
+    border-color: rgb(203, 203, 203);
+  border-radius: 10px;
+  font-size: clamp(0.2rem, 1vw, 10rem);
+  padding: 1%;
 }
 
 .gray{
@@ -110,6 +122,82 @@
 .green a{
   text-decoration: none;
   color: rgb(0, 255, 174);
+}
+
+@media(max-width: 1000px) and (min-width: 601px){
+
+  .about-main{
+    width: 96%;
+    margin-left: 0;
+    padding-bottom: 20%;
+
+  }
+
+  .top-half{
+    gap: 10px;
+    padding: 1%;
+  }
+
+  .ab-info{
+    font-size: clamp(0.2rem, 1.8vw, 10rem);
+  }
+
+  .ab-info button{
+    font-size: clamp(0.2rem, 1.8vw, 10rem);
+  }
+
+  .ab-imgcon{
+    width: 40%;
+  }
+
+  .bottom-half{
+    flex-direction: column;
+    align-items: start;
+    font-size: clamp(0.2rem, 1.8vw, 10rem);
+  }
+
+  .extra-half{
+    font-size: clamp(0.2rem, 1.8vw, 10rem);
+  }
+
+} 
+
+
+@media (max-width: 600px){
+
+  .about-main{
+    width: 96%;
+    height: 90dvh;
+    margin-left: 0;
+  }
+
+  .top-half{
+    gap: 10px;
+    padding: 1%;
+  }
+
+  .ab-info{
+    font-size: clamp(0.2rem, 3vw, 10rem);
+  }
+
+  .ab-info button{
+    font-size: clamp(0.2rem, 3vw, 10rem);
+  }
+
+  .ab-imgcon{
+    width: 48%;
+  }
+
+  .bottom-half{
+    flex-direction: column;
+    align-items: start;
+    font-size: clamp(0.2rem, 3vw, 10rem);
+  }
+
+  .extra-half{
+    font-size: clamp(0.2rem, 3vw, 10rem);
+  }
+
 }
 
 

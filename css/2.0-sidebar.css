@@ -147,3 +147,96 @@
 }
 
 /* ///////////////////////////  sidebar ends //////////////////////////////////////// */
+
+
+@media (max-width: 1000px) and (min-width: 601px){
+  .main-page{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+  }
+
+  .diamonds-js{
+    display: none;
+  }
+
+  .main-page header{
+    position: fixed;
+    width: 90%;
+    flex-direction: row;
+    bottom: 1.2%;
+    background-color: gray;
+    gap: 3rem;
+    padding: 2%;
+    border-radius: 20px;
+    animation: none;
+    z-index: 1000;
+  }
+
+  .buttons{
+      display: flex;
+  align-items: center;
+    width: 100%;
+  /*border-style: solid;/**/
+
+  }
+
+  .singlebutton{
+    position: relative;
+  min-height: 5dvh;
+ /*width:;/**/
+  }
+
+  .tooltip{
+      font-size: clamp(0.2rem, 1vw, 6rem);
+      width: 40%;
+  }
+}
+
+
+@media (max-width: 600px){
+
+  .main-page{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .diamonds-js{
+    display: none;
+  }
+
+  .main-page header{
+    position: fixed;
+    width: 90%;
+    flex-direction: row;
+    bottom: 1.2%;
+    background-color: gray;
+    gap: 1.2rem;
+    padding: 2%;
+    border-radius: 20px;
+    animation: none;
+    z-index: 1000;
+  }
+
+  .buttons{
+      display: flex;
+  align-items: center;
+
+  }
+
+  .singlebutton{
+    position: relative;
+  width: 80%;
+  min-height: 3dvh;
+  }
+
+  .tooltip{
+      font-size: clamp(0.2rem, 2vw, 6rem);
+      width: 100%;
+
+  }
+
+
+}

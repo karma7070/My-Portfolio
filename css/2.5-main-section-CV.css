@@ -42,7 +42,7 @@
   background-color: white;
   border-radius: 20px;
   color: #1fcd8d;
-
+  font-size: clamp(0.2rem, 1.4vw, 5rem);
 
 }
 
@@ -51,6 +51,7 @@
 }
 
 .floating-div a button{
+  font-size: clamp(0.2rem, 1vw, 5rem);
   padding: 4%;
   width: 100%;
   border-radius: 20px;
@@ -98,3 +99,42 @@ border-style: none;
   opacity: 1;
 }
   */
+
+@media(max-width: 1000px) and (min-width: 601px){
+
+
+.CV-resume-page{
+      width: 100%;
+      margin-left: 0;
+      padding-bottom: 20%;
+    }
+
+    .floating-div{
+      font-size: clamp(0.2rem, 2.5vw, 5rem);
+      width: 40%;
+    }
+
+    .floating-div a button{
+      font-size: clamp(0.2rem, 1.5vw, 5rem);
+    }
+} 
+
+  @media (max-width: 600px){
+
+    .CV-resume-page{
+      flex-direction: column;
+      width: 100%;
+      margin-left: 0;
+
+    }
+
+    .floating-div{
+      font-size: clamp(0.2rem, 4.5vw, 5rem);
+      width: 60%;
+    }
+
+    .floating-div a button{
+      font-size: clamp(0.2rem, 3.5vw, 5rem);
+    }
+
+  }

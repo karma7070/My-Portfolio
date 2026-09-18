@@ -12,7 +12,24 @@ body {
   background-color: white;
 
   display: flex;
-  min-height: 100dvh; /*
+  min-height: 100dvh;
+   /*
 Check read me file for explanation*/
+}
+
+@media(max-width:1000px) and (min-width:601){
+.main-page{
+    margin-top: -40px;
+
+  }
+}
+
+
+@media (max-width: 600px){
+
+  .main-page{
+    margin-top: -34px;
+
+  }
 }
 

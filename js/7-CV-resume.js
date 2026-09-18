@@ -1,4 +1,4 @@
- let cvContent = document.querySelector('.CV-file');
+ /*let cvContent = document.querySelector('.CV-file');
 
  let resContent = document.querySelector('.resume-file');
 
@@ -40,3 +40,5 @@ function displayResume(){
 }
 
 displayResume();
+
+*/
