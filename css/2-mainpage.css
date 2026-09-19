@@ -17,7 +17,7 @@ body {
 Check read me file for explanation*/
 }
 
-@media(max-width:1000px) and (min-width:601){
+@media(max-width:1000px) and (min-width:601px){
 .main-page{
     margin-top: -40px;
 

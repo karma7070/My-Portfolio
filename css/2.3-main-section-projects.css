@@ -3,7 +3,7 @@
   grid-template-columns: 1fr 1fr 1fr;
   width: 80%;
   padding: 2%;
-  gap: 5%;
+  gap: 4%;
   height: 90dvh;
   overflow-y: auto;
 
@@ -42,19 +42,18 @@
   vertical-align: bottom;
   width: 90%;
   border-radius: 20px;
-
   border-bottom-right-radius: 12px;
 
 }
 
 
 .project-tooltip{
-  font-size: clamp(0.2rem, 0.8vw, 3rem);
+  font-size: clamp(0.2rem, 0.8vw + 0.09dvh, 3rem);
 
   text-align: left;
   border-radius: 20px;
   width: 90%;
-  height: 50%;
+  height: 44%;
   color: gray;
 
   border-style: solid;
@@ -65,7 +64,7 @@
 }
 
 .project-tooltip p{
-    font-size: clamp(0.2rem, 1vw, 5rem);
+    font-size: clamp(0.2rem, 1vw + 0.4dvh, 5rem);
   font-weight: bolder;
   color: rgb(3, 178, 122);
 }
@@ -163,8 +162,9 @@
      display: grid;
   grid-template-columns: 1fr 1fr;
     margin-left: 0;
+     height: 90dvh;
     width: 100%;
-    height: 90dvh;
+   
   }
 
   .single-project img{

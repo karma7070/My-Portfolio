@@ -2,9 +2,9 @@
 
   display: flex;
   flex-direction: column;
-  gap: 3%;
+  gap: 2.2%;
   height: 90dvh;
-  width: 85%;
+  width: 84%;
   margin-left: -6%;
 
   font-family: 'Poppins', sans-serif;
@@ -30,7 +30,7 @@ padding-bottom: 5px;
 
 .featured p, .languages p,
  .Frontend p, .Backend p{
-   font-size: clamp(0.2rem, 2.2vw, 5rem);
+   font-size: clamp(0.2rem, 1.5vw, 5rem);
   font-weight: bolder;
   color: rgb(3, 178, 122);
 
@@ -38,7 +38,7 @@ padding-bottom: 5px;
  }
 
  .skill-display{
-   font-size: clamp(0.2rem, 1vw, 5rem);
+   font-size: clamp(0.2rem, 0.6vw + 0.3dvh, 5rem);
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   align-items: center;
@@ -68,7 +68,7 @@ padding-bottom: 5px;
  }
 
  .single-skill a{
-  font-size: clamp(0.01rem, 1vw, 3rem);
+  font-size: clamp(0.01rem, 0.8vw + 0.1dvh, 3rem);
   font-weight: bold;
   border-style: solid;
   padding: 2%;
@@ -102,6 +102,8 @@ progress::-webkit-progress-bar {
   background-color: #d6cfcf;
   border-radius: 100px;
 }
+
+
 @media(max-width: 1000px) and (min-width: 601px){
 
   .skill-con{

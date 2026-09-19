@@ -13,6 +13,11 @@
   margin-left: -6%;
   font-family: 'Poppins', sans-serif;
 
+  overflow-y: auto;
+}
+
+.about-main::-webkit-scrollbar{
+  display: none;
 }
 
 .top-half{
@@ -29,12 +34,12 @@
   border-width: 0.5px;
   border-color: rgb(203, 203, 203);
   border-radius: 10px;
-  font-size: clamp(0.2rem, 1vw, 10rem);
+  font-size: clamp(0.2rem, 1vw + 0.6dvh, 10rem);
  
 }
 
 .ab-info p{
-  font-size: clamp(0.2rem, 6vw, 10rem);
+  font-size: clamp(0.2rem, 6vw + 2dvh, 10rem);
   font-family: 'Open Sans';
   font-weight: bolder;
   margin-bottom: -1%;
@@ -55,7 +60,7 @@
   border-style: solid;
   border-radius: 40px;
   font-weight: bolder;
-  font-size: clamp(0.2rem, 1vw, 10rem);
+  font-size: clamp(0.2rem, 1vw + 0.4dvh, 10rem);
 
   transition: transform 0.5s;
 }
@@ -94,7 +99,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: clamp(0.2rem, 1.2vw, 10rem);
+  font-size: clamp(0.2rem, 1.2vw + 0.4dvh, 10rem);
   padding: 1%;
   border-style: solid;
   border-width: 0.5px;
@@ -107,7 +112,7 @@
   border-width: 0.5px;
     border-color: rgb(203, 203, 203);
   border-radius: 10px;
-  font-size: clamp(0.2rem, 1vw, 10rem);
+  font-size: clamp(0.2rem, 1.2vw + 0.4dvh, 10rem);
   padding: 1%;
 }
 
@@ -139,7 +144,7 @@
   }
 
   .ab-info{
-    font-size: clamp(0.2rem, 1.8vw, 10rem);
+    font-size: clamp(0.2rem, 1.8vw + 0.8dvh, 10rem);
   }
 
   .ab-info button{

@@ -6,7 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10dvh;
+  gap: 10%;
   opacity: 1;
 }
 
@@ -53,7 +53,7 @@
   color: #00a86b;
   font-family: "Poppins";
   font-weight: bolder;
-  font-size: clamp(0.2rem, 7vw, 40rem);
+  font-size: clamp(0.2rem, 7vw + 0.6dvh, 40rem);
 }
 
 .description h4 {
@@ -194,6 +194,10 @@
     background-color:  rgb(227, 239, 235);
     border-radius: 20px;
     padding: 1%;
+  }
+
+  .description a{
+    font-size: clamp(0.2rem, 7vw + 0.2dvh, 40rem);
   }
 
   .description h4 {

@@ -22,8 +22,9 @@ main{
   border-style: solid;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   min-height: 90dvh; 
-  width: 60%;
+  width: 62%;
   background-color: black;
 
   padding: 1%;
@@ -61,7 +62,7 @@ display: flex;
 
 .profile-con{
   width: 30%;
-  height: 40%;
+  height: 50%;
 
   display: flex;
   justify-content: right;
@@ -88,6 +89,7 @@ display: flex;
   border-color: blueviolet;*/
   width: 70%;
 
+
   display: flex;
   flex-direction: column;
 
@@ -99,6 +101,7 @@ display: flex;
     display: flex;
   flex-direction: column;
   line-height: 40px;
+  height: fit-content;
 }
 
 .cv-top-info-top svg{
@@ -108,19 +111,19 @@ display: flex;
 
 
 .cv-top-info-top a{
-  font-size: clamp(0.2rem, 5dvh, 10rem);
+  font-size: clamp(0.2rem, 2.5vw + 1dvh, 10rem);
   font-weight: bold;
 }
 
 .last-name{
-  font-size: clamp(0.2rem, 5dvh, 10rem);
+  font-size: clamp(0.2rem, 2.5vw + 1dvh, 10rem);
   font-weight: 200;
   color: #1fcd8d;
 
 }
 
 .field{
-  font-size: clamp(0.2rem, 2.5dvh, 10rem);
+  font-size: clamp(0.2rem, 1.4vw + 0.01dvh, 10rem);
   font-weight: 200;
   color: rgb(132, 132, 132);
   letter-spacing: 3px;
@@ -162,7 +165,7 @@ display: flex;
 }
 
 .cv-top-info-bottom-items a{
-  font-size: clamp(0.2rem, 1dvh, 4rem);
+  font-size: clamp(0.2rem, 0.5vw + 0.2dvh, 4rem);
   font-weight: bold;
 }
 
@@ -178,6 +181,8 @@ display: flex;
   background-color: white;
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
+
+  font-size: clamp(0.2rem, 1vw + 0.2dvh, 10rem);
 }
 
 .grids-con{
@@ -208,7 +213,7 @@ display: flex;
   position: relative;
  /* border-style: solid;
   border-color: rgb(145, 28, 230);*/
-  text-align: justify;
+  text-align: center;
   background-color: rgb(227, 239, 235);
   border-radius: 20px;
 
@@ -241,6 +246,84 @@ display: flex;
 
 .fullwidth{
    grid-column: 1/-1;
+}
+
+
+@media(max-width: 1000px) and (min-width: 601px){
+
+  main{
+    width: 90%;
+   
+  }
+} 
+
+@media(max-width: 600px){
+
+  main{
+    width: 90%;
+ 
+  }
+
+  .cv-top-info-top{
+    display: flex;
+  flex-direction: column;
+  line-height: 15px;
+  height: fit-content;
+}
+
+.cv-top-info-bottom{
+  border-radius: 5px;
+}
+
+.cv-top-info-bottom-items a{
+  font-size: clamp(0.2rem, 0.6vw + 0.22dvh, 4rem);
+  font-weight: bold;
+}
+
+.cv-bottom-con{
+  padding: 5%;
+
+  background-color: white;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+
+  font-size: clamp(0.2rem, 1.8vw + 0.2dvh, 10rem);
+}
+
+.floating-label{
+  position: absolute;
+  top: -8px;
+  left: 12%;
+
+  width: 70%;
+  background-color: #3ef6b3;
+  color: white;
+  padding-left: 5%;
+  padding-right: 5%;
+  font-weight: bold;
+  padding: 2%;
+  border-radius: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-con-right{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.grid-con-left{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+
 }
 
 

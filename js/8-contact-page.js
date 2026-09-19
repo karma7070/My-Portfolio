@@ -34,3 +34,30 @@ document.addEventListener("click", function(e){
 }
 
 linkPageSwitch();
+
+let senderName = document.querySelector('.name');
+
+let senderEmail = document.querySelector('.email');
+
+let senderMessage = document.querySelector('.message');
+
+function sendMessage(){
+
+  document.querySelector('.send')
+  .addEventListener("click", function(e){
+
+    emailjs.send("service_u55e5jp", "template_o8sioc8", {
+      from_name: senderName.value,
+      from_email: senderEmail.value,
+      sent_at: new Date().toLocaleString(),
+      message: senderMessage.value
+    });
+
+    senderName.value = "";
+    senderEmail.value = "";
+    senderMessage.value = "";
+
+  })
+}
+
+sendMessage();
