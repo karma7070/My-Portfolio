@@ -157,6 +157,10 @@
 
 @media (max-width: 600px){
 
+  .main-page .intro.fade-out {
+  animation: opacityAnimationforPhone 1s ease 1;
+}
+
   .main-page .intro{
     display: flex;
     flex-direction: column;

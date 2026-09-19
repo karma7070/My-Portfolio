@@ -60,4 +60,7 @@ function sendMessage(){
   })
 }
 
-sendMessage();
+if(leavingPageId === "#contact-section"){
+  sendMessage();
+}
+
