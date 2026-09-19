@@ -170,6 +170,8 @@ footer div{
   width: 20%;
   display: flex;
   align-items: center;
+  text-decoration: none;
+  color: white;
 }
 
 .handle-con img{
@@ -335,6 +337,7 @@ footer div{
 
 footer{
    font-size: clamp(0.1rem, 2.5vw, 2rem);
+   height: 50%;
 }
 
 .logo-con{
