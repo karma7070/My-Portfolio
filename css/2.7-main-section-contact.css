@@ -346,6 +346,10 @@ footer{
    height: 50%;
 }
 
+footer div{
+    gap: 20px;
+}
+
 .logo-con{
   border-radius: 100px;
   width: 32%;
