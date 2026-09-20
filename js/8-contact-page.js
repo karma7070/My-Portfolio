@@ -46,6 +46,16 @@ function sendMessage(){
   document.querySelector('.send')
   .addEventListener("click", function(e){
 
+    if( !senderName.value || !senderEmail.value){
+      alert("Enter name and email before sending!");
+      return;
+    }
+
+    if(!senderMessage.value){
+      alert("Enter message before sending!");
+      return
+    }
+
     emailjs.send("service_u55e5jp", "template_o8sioc8", {
       from_name: senderName.value,
       from_email: senderEmail.value,

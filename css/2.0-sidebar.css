@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   width: 10%;
-  padding-left: 3%;
+  padding-left: 2.6%;
   justify-content: center;
   gap: 3.5rem;
   animation: none;
@@ -19,9 +19,9 @@
 
 .singlebutton {
   position: relative;
-  width: 50%;
+  width: 48%;
   min-height: 8dvh;
-  background-color: #1fcd8d;
+  background-color: #005F69;
   border-radius: 20px;
   border-style: none;
   margin-left: 10%;
@@ -60,7 +60,7 @@
 
 .singlebutton:hover {
   box-shadow:
-    0 10px 16px -3px rgba(21, 237, 93, 0.5),
+    0 10px 16px -3px rgba(36, 71, 60, 0.5),
     0 15px 14px -3px rgba(20, 85, 71, 0.06);
 
   transform: translateY(-10%);
@@ -76,7 +76,7 @@
 
 .togglebutton {
   box-shadow:
-    0 10px 16px -3px rgba(21, 237, 93, 0.5),
+    0 10px 16px -3px rgba(36, 71, 60, 0.5),
     0 15px 14px -3px rgba(20, 85, 71, 0.06);
 
   transform: translateY(-10%);
@@ -116,17 +116,18 @@
   display: flex;
   align-items: center;
   width: fit-content;
-  background-color: #00a86b;
-  color: white;
+  background-color: #F7F7F2;
+  color: #005F69;
   text-align: center;
 
-  font-family: roboto, sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: clamp(0.2rem, 1vw, 6rem);
   padding-left: 5px;
   padding-right: 5px;
   border-radius: 19px;
 
   border-style: solid;
+  border-color: #005F69;
 
   transition: opacity 0.7s ease-in-out;
 
@@ -142,7 +143,7 @@
 
 .tooltip a {
   text-decoration: none;
-  color: white;
+  color: #005F69;
 
   padding-right: 20%;
 }
@@ -237,7 +238,8 @@
 
   .tooltip{
       font-size: clamp(0.2rem, 2vw, 6rem);
-      width: 100%;
+      width: fit-content;
+      
 
   }
 

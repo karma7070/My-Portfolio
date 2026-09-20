@@ -4,7 +4,7 @@
   width: 80%;
   height: 90dvh;
   overflow-y: auto;
-  background-color:  rgb(227, 239, 235);
+  background-color: rgb(247, 250, 255);
   margin-left: -6%;
 
   font-family: 'Poppins', sans-serif;
@@ -36,7 +36,7 @@
 }
 
 .message-me strong{
-  color: rgb(100, 223, 182);
+  color: #005F69;
   font-size: clamp(0.2rem, 2vw + 0.8dvh, 5rem);
 }
 
@@ -51,8 +51,9 @@
 }
 
 .input{
-  background-color: rgb(98, 231, 184);
-  width: 70%;
+  background-color: #005F69;
+  color: white;
+  width: 80%;
   padding: 10px;
   border-radius: 15px;
   border-style: none;
@@ -67,25 +68,28 @@
   width: fit-content;
   padding: 2%;
   border-radius: 10px;
-  color:rgb(71, 192, 150);
+  color:#005F69;
   border-style: solid;
-  border-color: rgb(71, 192, 150);
+  border-color: #005F69;
   font-weight: bold;
   cursor: pointer;
   transition: all 0.5s ease-in-out;
  
 }
 
+
+
 .send:hover{
-  background-color: rgb(71, 192, 150);
+  background-color: #005F69;
   color: white;
   transform: translate(0, -5px);
 }
 
+.send:active{
+  cursor:progress;
+}
+
 .contact-icon-links{
-  border-left-style: solid;
-  border-color: green;
-  border-left-width: 1px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -131,7 +135,7 @@ footer{
 
   font-size: clamp(0.1rem, 0.8vw + 0.6dvh, 2rem);
   color: rgb(175, 175, 175);
-  background-color: rgb(44, 60, 54);
+  background-color: #003e45;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 
@@ -173,7 +177,7 @@ footer div{
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: white;
+  color: rgb(180, 180, 180);
 }
 
 .handle-con img{

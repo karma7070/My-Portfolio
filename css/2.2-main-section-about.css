@@ -22,26 +22,26 @@
 
 .top-half{
     display: flex;
-  justify-content: space-between;
   align-items: center;
+  gap: 4%;
 
 }
 
 .ab-info{
-  width: 50%;
+  width: 80%;
   border-style: solid;
   padding: 1%;
   border-width: 0.5px;
   border-color: rgb(203, 203, 203);
   border-radius: 10px;
-  font-size: clamp(0.2rem, 0.6vw + 0.2dvh, 10rem);
+  font-size: clamp(0.2rem, 0.6vw + 0.1dvh, 10rem);
 
- 
+  background-color: rgb(247, 250, 255);
 }
 
 .ab-info p{
-  font-size: clamp(0.2rem, 6vw + 2dvh, 10rem);
-  font-family: 'Open Sans';
+  font-size: clamp(0.2rem, 4vw + 1.2dvh, 10rem);
+  font-family: 'Open Sans', sans-serif;
   font-weight: bolder;
   margin-bottom: -1%;
 }
@@ -49,20 +49,20 @@
 .ab-info a{
   color: gray;
   margin-bottom: 10%;
-  font-size: clamp(0.2rem, 1.2vw + 0.2dvh, 10rem);
+  font-size: clamp(0.2rem, 1vw + 0.2dvh, 10rem);
 }
 
 .ab-info button{
   background-color: white;
-  padding: 2%;
-  padding-left: 10%;
-  padding-right: 10%;
-  border-color: rgb(0, 255, 174);
+  padding: 1.4%;
+  padding-left: 6%;
+  padding-right: 6%;
+  border-color: #005F69;
   border-width: 4px;
   border-style: solid;
   border-radius: 40px;
   font-weight: bolder;
-  font-size: clamp(0.2rem, 1vw + 0.4dvh, 10rem);
+  font-size: clamp(0.2rem, 1vw + 0.2dvh, 10rem);
 
   transition: transform 0.5s;
 }
@@ -70,7 +70,7 @@
 .ab-info button:hover{
   transform: translate(0, -15%);
   color: white;
-  background-color: rgb(0, 255, 174);
+  background-color: #005F69;
     box-shadow:
     0 12px 20px -8px rgba(0, 50, 30, 0.3),
     /* Tight dark green shadow underneath */ 0 25px 40px -12px
@@ -78,10 +78,11 @@
 }
 
 .ab-imgcon{
-  width: 40%;
-  border-radius: 100px;
+  width: 30%;
   overflow: hidden;
-  height: fit-content;
+  border-radius: 10px;
+  border-top-left-radius: 100px;
+  border-bottom-right-radius: 100px;
     box-shadow:
     0 12px 20px -8px rgba(0, 50, 30, 0.3),
     /* Tight dark green shadow underneath */ 0 25px 40px -12px
@@ -101,12 +102,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: clamp(0.2rem, 1.2vw + 0.4dvh, 10rem);
+  font-size: clamp(0.2rem, 1vw + 0.2dvh, 10rem);
   padding: 1%;
   border-style: solid;
   border-width: 0.5px;
   border-color: rgb(203, 203, 203);
   border-radius: 10px;
+
+  background-color: rgb(247, 250, 255);
 }
 
 .extra-half{
@@ -114,21 +117,25 @@
   border-width: 0.5px;
     border-color: rgb(203, 203, 203);
   border-radius: 10px;
-  font-size: clamp(0.2rem, 1.2vw + 0.4dvh, 10rem);
+  font-size: clamp(0.2rem, 1vw + 0.2dvh, 10rem);
   padding: 1%;
+
+  background-color: rgb(247, 250, 255);
 }
 
 .gray{
   color: gray;
+  
 }
 
 .green{
-  color: rgb(0, 255, 174);
+  color: #005F69;
+  font-weight: bold;
 }
 
 .green a{
   text-decoration: none;
-  color: rgb(0, 255, 174);
+  color: #005F69;
 }
 
 @media(max-width: 1000px) and (min-width: 601px){
@@ -146,7 +153,7 @@
   }
 
   .ab-info{
-    font-size: clamp(0.2rem, 1.8vw + 0.8dvh, 10rem);
+    font-size: clamp(0.2rem, 1.9vw + 0.8dvh, 10rem);
   }
 
   .ab-info button{
@@ -160,11 +167,11 @@
   .bottom-half{
     flex-direction: column;
     align-items: start;
-    font-size: clamp(0.2rem, 1.8vw, 10rem);
+    font-size: clamp(0.2rem, 1.4vw, 10rem);
   }
 
   .extra-half{
-    font-size: clamp(0.2rem, 1.8vw, 10rem);
+    font-size: clamp(0.2rem, 1.4vw, 10rem);
   }
 
 } 
@@ -184,29 +191,38 @@
   }
 
   .ab-info{
-    font-size: clamp(0.2rem, 2.5vw, 10rem);
+    font-size: clamp(0.2rem, 2vw, 10rem);
+    width: 98%;
   }
 
   .ab-info a{
-    font-size: clamp(0.2rem, 2vw, 10rem);
+    font-size: clamp(0.2rem, 1.4vw + 0.09dvh, 10rem);
+  }
+
+  .ab-info p{
+    font-size: clamp(0.2rem, 4.6vw, 10rem);
   }
 
   .ab-info button{
-    font-size: clamp(0.2rem, 2.5vw, 10rem);
+    font-size: clamp(0.2rem, 1.8vw, 10rem);
+      border-width: 1px;
   }
 
   .ab-imgcon{
     width: 48%;
+      border-top-left-radius: 40px;
+  border-bottom-right-radius: 40px;
   }
+
 
   .bottom-half{
     flex-direction: column;
     align-items: start;
-    font-size: clamp(0.2rem, 3vw, 10rem);
+    font-size: clamp(0.2rem, 2.5vw, 10rem);
   }
 
   .extra-half{
-    font-size: clamp(0.2rem, 3vw, 10rem);
+    font-size: clamp(0.2rem, 2.5vw, 10rem);
   }
 
 }

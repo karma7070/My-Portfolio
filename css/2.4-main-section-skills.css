@@ -26,13 +26,15 @@ height: auto;
 border-radius: 6px;
 padding-left: 4px;
 padding-bottom: 5px;
+
+background-color: rgb(247, 250, 255);
 }
 
 .featured p, .languages p,
  .Frontend p, .Backend p{
    font-size: clamp(0.2rem, 1.5vw, 5rem);
   font-weight: bolder;
-  color: rgb(3, 178, 122);
+  color: #005F69;
 
 
  }
@@ -55,6 +57,8 @@ padding-bottom: 5px;
   height: fit-content;
   margin-top: 10%;
   position: relative;
+
+  
  }
 
 .singleskill-info-con{
@@ -62,7 +66,7 @@ padding-bottom: 5px;
  }
 
  .single-skill img{
-  width: 30%;
+  width: 26%;
   height: 6dvh;
 
  }
@@ -94,7 +98,7 @@ padding-bottom: 5px;
 }
 
 .progBar::-webkit-progress-value {
-  background-color: rgb(5, 191, 120);
+  background-color: #005F69;
   border-radius: 100px;
 }
 
@@ -145,6 +149,12 @@ progress::-webkit-progress-bar {
   .single-skill{
     width: 90%;
   }
+
+   .single-skill img{
+  width: 20%;
+  height: 6dvh;
+
+ }
 
   .single-skill a{
     font-size: clamp(0.01rem, 2.4vw, 3rem);

@@ -4,7 +4,7 @@
   height: 90dvh;
   gap: 9%;
   padding: 1%;
-  background-color: rgb(227, 239, 235);
+   background-color: rgb(247, 250, 255);
   margin-left: -6%;
   border-radius: 20px;
 
@@ -41,7 +41,7 @@
   flex-direction: column;
   background-color: white;
   border-radius: 20px;
-  color: #1fcd8d;
+  color: #005F69;
   font-size: clamp(0.2rem, 1.4vw + 0.5dvh, 5rem);
 
 }
@@ -63,7 +63,7 @@ border-style: none;
 }
 
 .floating-div a button:hover{
-  background-color: #1fcd8d;
+  background-color: #005F69;
   color: white;
   border-color: rgb(184, 178, 178);
   transform: translate(0, -5%);

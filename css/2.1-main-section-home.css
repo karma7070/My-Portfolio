@@ -6,7 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10%;
+  gap: 8%;
   opacity: 1;
 }
 
@@ -50,7 +50,7 @@
 }
 
 .description a {
-  color: #00a86b;
+  color: #005F69;
   font-family: "Poppins";
   font-weight: bolder;
   font-size: clamp(0.2rem, 7vw + 0.6dvh, 40rem);
@@ -70,8 +70,8 @@
   font-size: clamp(0.2rem, 1vw, 10rem);
   font-weight: bold;
   border-style: solid;
-  border-color: #00a86b;
-  color: #00a86b;
+  border-color: #005F69;
+  color: #005F69;
   border-width: 5px;
 
   box-shadow: #00a86b;
@@ -80,7 +80,7 @@
 }
 
 .description button:hover {
-  background-color: #00a86b;
+  background-color: #005F69;
   color: white;
   box-shadow:
     0 12px 20px -8px rgba(0, 50, 30, 0.3),
@@ -98,6 +98,7 @@
   top: 0;
   bottom: 0;
   left: 90%;
+  color: #005F69;
 
   text-align: center;
 }
@@ -195,7 +196,7 @@
     border-style: solid;
     border-width: 1px;
     border-color: rgb(211, 208, 208);
-    background-color:  rgb(227, 239, 235);
+     background-color: rgb(247, 250, 255);
     border-radius: 20px;
     padding: 1%;
   }
@@ -214,7 +215,7 @@
 .description button{
   align-self: center;
   font-size: clamp(0.2rem, 3vw, 40rem);
-  width: 50%;
+  width: 30%;
   border-width: 2px;
 }
 
