@@ -150,7 +150,7 @@
 .description button{
   align-self: center;
   font-size: clamp(0.2rem, 1.5vw, 40rem);
-  width: 50%;
+  width: 30%;
   border-width: 2px;
 }
 
