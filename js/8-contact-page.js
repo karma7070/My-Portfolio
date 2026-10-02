@@ -41,7 +41,6 @@ let senderEmail = document.querySelector('.email');
 
 let senderMessage = document.querySelector('.message');
 
-function sendMessage(){
 
   document.querySelector('.send')
   .addEventListener("click", function(e){
@@ -68,9 +67,5 @@ function sendMessage(){
     senderMessage.value = "";
 
   })
-}
 
-if(leavingPageId === "#contact-section"){
-  sendMessage();
-}
 

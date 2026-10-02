@@ -83,7 +83,6 @@ This is my personal portfolio site — built entirely from scratch with vanilla 
 ## Contact
 - **Email:** [arthurmatike@gmail.com](mailto:arthurmatike@gmail.com)
 - **GitHub:** [github.com/karma7070](https://github.com/karma7070)
-- **LinkedIn:** *add your link here*
 
 ---
 

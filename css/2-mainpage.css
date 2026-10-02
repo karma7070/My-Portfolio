@@ -30,8 +30,18 @@ Check read me file for explanation*/
 @media (max-width: 600px){
 
   .main-page{
-    margin-top: -34px;
+    min-height: none;
     background-color:  rgb(227, 239, 235);
+    border-style: solid;
   }
+
+  .main-page .intro{
+     display: flex;
+    flex-direction: column;
+    gap: 30px;
+    border-style: solid;
+    border-color: red;
+  }
+
 }
 

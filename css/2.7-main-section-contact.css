@@ -282,6 +282,9 @@ footer div{
     width: 100%;
     margin-left: 0;
 
+    overflow-y: none;
+    margin-top: 10%;
+
   }
 
   .message-me{
